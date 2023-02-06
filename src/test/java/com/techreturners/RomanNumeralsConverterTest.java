@@ -47,7 +47,7 @@ public class RomanNumeralsConverterTest {
 
     }
 
-    @Ignore
+    @Test
     public void convertTwoToNumeral(){
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("II", romanNumeralsConverter.convert(2));

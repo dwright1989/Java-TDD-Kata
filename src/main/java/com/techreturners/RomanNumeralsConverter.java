@@ -1,6 +1,7 @@
 package com.techreturners;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class RomanNumeralsConverter {
 
@@ -44,10 +45,19 @@ public class RomanNumeralsConverter {
         romanNumerals.put(900, "CM");
         romanNumerals.put(1000, "M");
 
-        // Check if exists in here, if not, go by digit to digit to get appropriate result
         String result = romanNumerals.get(arabicNumber);
-        if(result==null || result.isEmpty()){
-            System.out.println("Does not exist in Hashmap.  Need to calculate...");
+        if((result == null || result.isEmpty())){
+           // loop through map to get largest value divisible by from map
+            for(Map.Entry<Integer, String> entry : romanNumerals.entrySet()){
+                while(entry.getKey()<=arabicNumber){
+                    if(result==null){
+                        result = entry.getValue();
+                    }else{
+                        result += entry.getValue();
+                    }
+                    arabicNumber -= entry.getKey();
+                }
+            }
         }
         
         return result;
