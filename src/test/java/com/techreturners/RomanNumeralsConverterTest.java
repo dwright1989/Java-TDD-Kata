@@ -43,8 +43,6 @@ public class RomanNumeralsConverterTest {
         assertEquals("D", romanNumeralsConverter.convert(500));
         assertEquals("CM", romanNumeralsConverter.convert(900));
         assertEquals("M", romanNumeralsConverter.convert(1000));
-
-
     }
 
     @Test
@@ -66,5 +64,24 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("VI", romanNumeralsConverter.convert(6));
 
+    }
+
+    @Test
+    public void convertSixteenToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("XVI", romanNumeralsConverter.convert(16));
+
+    }
+
+    @Test
+    public void convertTwoHundredAndTwoToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("CCII", romanNumeralsConverter.convert(202));
+    }
+
+    @Test
+    public void convertThreeNineNineNineToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("MMMCMXCIX", romanNumeralsConverter.convert(3999));
     }
 }
