@@ -1,7 +1,9 @@
 package com.techreturners;
 
-import java.util.HashMap;
+
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class RomanNumeralsConverter {
 
@@ -30,21 +32,20 @@ public class RomanNumeralsConverter {
 
     public String convert(int arabicNumber) {
         // Key/map pairs between original 13 (to include subtractive cases)
-        HashMap<Integer, String> romanNumerals = new HashMap<Integer, String>();
-        romanNumerals.put(1, "I");
-        romanNumerals.put(4, "IV");
-        romanNumerals.put(5, "V");
-        romanNumerals.put(9, "IX");
-        romanNumerals.put(10, "X");
-        romanNumerals.put(40, "XL");
-        romanNumerals.put(50, "L");
-        romanNumerals.put(90, "XC");
-        romanNumerals.put(100, "C");
-        romanNumerals.put(400, "CD");
-        romanNumerals.put(500, "D");
-        romanNumerals.put(900, "CM");
+        LinkedHashMap<Integer, String> romanNumerals = new LinkedHashMap<>();
         romanNumerals.put(1000, "M");
-
+        romanNumerals.put(900, "CM");
+        romanNumerals.put(500, "D");
+        romanNumerals.put(400, "CD");
+        romanNumerals.put(100, "C");
+        romanNumerals.put(90, "XC");
+        romanNumerals.put(50, "L");
+        romanNumerals.put(40, "XL");
+        romanNumerals.put(10, "X");
+        romanNumerals.put(9, "IX");
+        romanNumerals.put(5, "V");
+        romanNumerals.put(4, "IV");
+        romanNumerals.put(1, "I");
         String result = romanNumerals.get(arabicNumber);
         if((result == null || result.isEmpty())){
            // loop through map to get largest value divisible by from map

@@ -53,4 +53,18 @@ public class RomanNumeralsConverterTest {
         assertEquals("II", romanNumeralsConverter.convert(2));
 
     }
+
+    @Test
+    public void convertThreeToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("III", romanNumeralsConverter.convert(3));
+
+    }
+
+    @Test
+    public void convertSixToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("VI", romanNumeralsConverter.convert(6));
+
+    }
 }
