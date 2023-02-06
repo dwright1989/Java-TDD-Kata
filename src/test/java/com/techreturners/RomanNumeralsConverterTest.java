@@ -84,4 +84,10 @@ public class RomanNumeralsConverterTest {
         RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
         assertEquals("MMMCMXCIX", romanNumeralsConverter.convert(3999));
     }
+
+    @Test
+    public void convertZeroToNumeral(){
+        RomanNumeralsConverter romanNumeralsConverter = new RomanNumeralsConverter();
+        assertEquals("", romanNumeralsConverter.convert(0));
+    }
 }

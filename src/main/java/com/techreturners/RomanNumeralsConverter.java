@@ -48,14 +48,11 @@ public class RomanNumeralsConverter {
         romanNumerals.put(1, "I");
         String result = romanNumerals.get(arabicNumber);
         if((result == null || result.isEmpty())){
+            result = "";
            // loop through map to get largest value divisible by from map
             for(Map.Entry<Integer, String> entry : romanNumerals.entrySet()){
                 while(entry.getKey()<=arabicNumber){
-                    if(result==null){
-                        result = entry.getValue();
-                    }else{
                         result += entry.getValue();
-                    }
                     arabicNumber -= entry.getKey();
                 }
             }
